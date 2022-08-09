@@ -1,17 +1,28 @@
+using Ct.Interview.Application;
+using Ct.Interview.Infrastructure;
+using Ct.Interview.Web.Api;
+
 var builder = WebApplication.CreateBuilder(args);
+{
+    builder.Services
+        .AddPresentation()
+        .AddApplication()
+        .AddInfrastructure(builder.Configuration);
 
-// Add services to the container.
+    // Add services to the container.
 
-builder.Services.AddControllers();
+    builder.Services.AddControllers();
+}
 
 var app = builder.Build();
+{
+    // Configure the HTTP request pipeline.
 
-// Configure the HTTP request pipeline.
+    app.UseHttpsRedirection();
 
-app.UseHttpsRedirection();
+    //app.UseAuthorization();
 
-app.UseAuthorization();
+    app.MapControllers();
 
-app.MapControllers();
-
-app.Run();
+    app.Run();
+}

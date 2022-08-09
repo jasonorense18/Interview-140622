@@ -6,4 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ct.Interview.Application\Ct.Interview.Application.csproj" />
+    <ProjectReference Include="..\Ct.Interview.Contracts\Ct.Interview.Contracts.csproj" />
+    <ProjectReference Include="..\Ct.Interview.Domain\Ct.Interview.Domain.csproj" />
+    <ProjectReference Include="..\Ct.Interview.Infrastructure\Ct.Interview.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
